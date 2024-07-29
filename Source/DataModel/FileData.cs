@@ -1,8 +1,10 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
 using System.Reflection;
 
 namespace RDES.ConflictAnalyzer.DataModel;
 
+[DebuggerDisplay("{" + nameof(FileName) + "}")]
 public class FileData: NotifyBase
 {
     public string FullPath { get; }

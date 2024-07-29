@@ -8,7 +8,8 @@ public static class Utility
     {
         var comparisons = new List<FileComparison>();
 
-        var uniqueList = filesA.Concat(filesB).OrderBy(x => x.FileName).Distinct().ToList();
+        var comparer = new ComparerFileDataNameOnly();
+        var uniqueList = filesA.Concat(filesB).OrderBy(x => x.FileName).Distinct(comparer).ToList();
 
         foreach (var fileData in uniqueList)
         {
